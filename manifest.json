@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Lapin Blanc",
+  "version": "1.0",
+  "description": "Allow the user to set up a timeout on a website. When browsing the website before the end of the timeout, a warning is displayed",
+
+  "icons": {
+    "48": "icons/apple_bunny_emoji_48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["lapin_blanc.js"],
+      "css": ["lapin_blanc.css"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "web_accessible_resources": ["img/lapin_tenniel.jpg"],
+
+  "applications": {
+   "gecko": {
+     "id": "lapin-blanc@mozilla.org"
+    }
+  },
+
+  "options_ui": {
+    "page": "options.html"
+  },
+
+  "permissions": ["storage"]
+}
